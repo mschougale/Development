@@ -5767,4 +5767,12 @@ button.close{
         display:none!important
     }
 }
+
+.pad-top-bottom
+{
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 100%;
+    text-align: left
+}
 /*# sourceMappingURL=bootstrap.min.css.map */

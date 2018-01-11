@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder,Validators  } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,18 +9,18 @@ import { FormGroup, FormBuilder,Validators  } from '@angular/forms';
 })
 
 export class userComponent {
-  loginForm : FormGroup;
+  loginForm: FormGroup;
+  public errorMsg = '';
 
-  constructor(fb: FormBuilder){
+  constructor(fb: FormBuilder) {
     this.loginForm = fb.group({
-      'username':[null, Validators.required],
-      'remember':false,
-      'password':[null, Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(15)])],
+      'username': [null, Validators.required],
+      'remember': false,
+      'password': [null, Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(15)])],
     })
   }
-  
-  submitForm(value: any){
-    console.log(value);
-    alert(value.username);
+
+  submitForm(value: any) {
+    
   }
 }
