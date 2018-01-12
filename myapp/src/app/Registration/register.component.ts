@@ -9,15 +9,17 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 
 export class registerComponent {
-    loginForm: FormGroup;
+  registerForm: FormGroup;
   public errorMsg = '';
 
   constructor(fb: FormBuilder) {
-    this.loginForm = fb.group({
-      'username': [null, Validators.required],
-      'remember': false,
+    this.registerForm = fb.group({
+      'firstName': [null, Validators.required],
+      'lastName': [null, Validators.required],
+      'email': [null, Validators.email],
       'password': [null, Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(15)])],
     })
+    this.registerForm.get('email').setValidators(Validators.email);
   }
 
   submitForm(value: any) {

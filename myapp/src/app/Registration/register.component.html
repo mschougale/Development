@@ -1,47 +1,54 @@
 <div class="container">
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-        <div class="panel panel-primary">
+        <div class="panel panel-info">
             <div class="panel-heading">
                 <div class="panel-title">Welcome to BCCI Registration</div>
                 {{errorMsg}}
             </div>
             <div style="padding-top:30px" class="panel-body">
-                <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)">
-                    <div class="input-group" [ngClass]="{'has-error':!loginForm.controls['username'].valid && loginForm.controls['username'].touched, 'has-success':loginForm.controls['username'].valid && loginForm.controls['username'].touched}" >
+                <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm.value)">
+                    <div class="input-group" [ngClass]="{'has-error':!registerForm.controls['firstName'].valid && registerForm.controls['firstName'].touched, 'has-success':registerForm.controls['firstName'].valid && registerForm.controls['firstName'].touched}" >
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-user"></i>
                         </span>
-                        <input id="login-username" type="text" class="form-control" name="username" value="" tabindex="1" placeholder="username or email" [formControl]="loginForm.controls['username']">
+                        <input id="login-firstName" type="text" class="form-control" name="firstName" value="" tabindex="1" placeholder="first name" [formControl]="registerForm.controls['firstName']">
                     </div>
-                    <div *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched" class="text-danger  pad-top-bottom pull-left">Enter username or email.</div>
+                    <div *ngIf="registerForm.controls['firstName'].hasError('required') && registerForm.controls['firstName'].touched" class="text-danger  pad-top-bottom pull-left">Enter first name.</div>
                     <br>
-                    <div class="input-group" [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched,'has-success':loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
+                    <div class="input-group" [ngClass]="{'has-error':!registerForm.controls['lastName'].valid && registerForm.controls['lastName'].touched, 'has-success':registerForm.controls['lastName'].valid && registerForm.controls['lastName'].touched}" >
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </span>
+                        <input id="login-lastName" type="text" class="form-control" name="lastName" value="" tabindex="2" placeholder="last name" [formControl]="registerForm.controls['lastName']">
+                    </div>
+                    <div *ngIf="registerForm.controls['lastName'].hasError('required') && registerForm.controls['lastName'].touched" class="text-danger  pad-top-bottom pull-left">Enter last name.</div>
+                    <br>
+                    <div class="input-group" [ngClass]="{'has-error':!registerForm.controls['email'].valid && registerForm.controls['email'].touched, 'has-success':registerForm.controls['email'].valid && registerForm.controls['email'].touched}" >
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </span>
+                        <input id="register-email" type="text" class="form-control" name="email" value="" tabindex="3" placeholder="email" [formControl]="registerForm.controls['email']">
+                    </div>
+                    <div *ngIf="registerForm.controls['email'].hasError('required') && registerForm.controls['email'].touched" class="text-danger  pad-top-bottom pull-left">Enter email.</div>
+                    <br>
+                    <div class="input-group" [ngClass]="{'has-error':!registerForm.controls['password'].valid && registerForm.controls['password'].touched,'has-success':registerForm.controls['password'].valid && registerForm.controls['password'].touched}">
                         <span class="input-group-addon">
                             <i class="glyphicon glyphicon-lock"></i>
                         </span>
-                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password" tabindex="2" [formControl]="loginForm.controls['password']">
+                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password" tabindex="2" [formControl]="registerForm.controls['password']">
                     </div>
-                    <div *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched" class="text-danger pad-top-bottom pull-left ">Enter password.</div>
+                    <div *ngIf="registerForm.controls['password'].hasError('required') && registerForm.controls['password'].touched" class="text-danger pad-top-bottom pull-left ">Enter password.</div>
                     <br>
-                    <div class="input-group">
-                        <div class="checkbox">
-                            <label>
-                                <input id="login-remember" type="checkbox" tabindex="3" name="remember" value="1" [formControl]="loginForm.controls['remember']"> Remember me
-                            </label>
-                        </div>
-                    </div>
                     <div style="margin-top:10px" class="input-group">
-                        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid" tabindex="4" style="width: 100px">Submit</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid" tabindex="4" style="width: 80px">Submit</button>
                     </div>
-                    <div style="float:right; position: relative; top:-10px">
-                        <a href="#">Forgot password?</a>
-                    </div>
+                    <br>
                     <div class="form-group">
                         <div class="col-md-12 control">
                             <div style="border-top: 1px solid#888; padding-top:15px;">
-                                Don't have an account!
+                                Allready have an account!
                                 <a href="#">
-                                    Create acoount
+                                    Login here
                                 </a>
                             </div>
                         </div>
