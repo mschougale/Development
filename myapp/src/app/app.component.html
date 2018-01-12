@@ -12,15 +12,15 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user active"></span> Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in active"></span> Login</a></li>
+          <li><a [routerLink]="['/signup']"routerLinkActive="active"><span class="glyphicon glyphicon-user active"></span> Sign Up</a></li>
+          <li><a [routerLink]="['/login']" routerLinkActive="active"><span class="glyphicon glyphicon-log-in active"></span> Login</a></li>
         </ul>
       </div>
     </div>
   </nav>
     
   <div class="container">
-    <main-app></main-app>
+    <router-outlet></router-outlet>
   </div>
 </div>
 

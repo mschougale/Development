@@ -3,13 +3,13 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
-  selector: 'login',
-  templateUrl: 'user.component.html',
-  styleUrls: ['../app.component.css']
+    selector: 'signup',
+    templateUrl: 'register.component.html',
+    styleUrls: ['../app.component.css']
 })
 
-export class userComponent {
-  loginForm: FormGroup;
+export class registerComponent {
+    loginForm: FormGroup;
   public errorMsg = '';
 
   constructor(fb: FormBuilder) {
